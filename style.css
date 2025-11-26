@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  background: #000;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+/* القسم العلوي */
+.top-section {
+  padding-top: 20px;
+}
+
+.main-img {
+  width: 260px;
+  animation: fadeIn 1.2s ease-in-out forwards;
+  opacity: 0;
+}
+
+.title {
+  font-size: 60px;
+  margin: 10px 0 0;
+  text-shadow: 0 0 10px #fff;
+  animation: glow 2s infinite alternate;
+}
+
+.soon {
+  color: red;
+  font-size: 22px;
+  margin-top: 5px;
+}
+
+/* شبكة الصور */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ثابت 3 صور */
+  gap: 25px;
+  padding: 30px;
+}
+
+.gimg {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+
+  /* دخول تدريجي */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeSlide 0.8s ease forwards;
+
+  /* تأثير الفلاش */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.25s ease;
+}
+
+.gimg:hover {
+  transform: scale(1.09);
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.9);
+  filter: brightness(1.35);
+}
+
+/* تأخير الدخول */
+.gimg:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.gimg:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.gimg:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.gimg:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.gimg:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.gimg:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* النص السفلي */
+.bottom-text {
+  width: 90%;
+  margin: 40px auto;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.email {
+  font-weight: bold;
+  letter-spacing: 1px;
+  word-break: break-all; /* كسر النص الطويل عند الحاجة */
+  overflow-wrap: break-word; /* احتياطي لكسر النص */
+}
+
+/* أنيميشن */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 8px #fff;
+  }
+  to {
+    text-shadow: 0 0 20px #ccc;
+  }
+}
+
+/* رسبونسف للموبايل */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr; /* صورة واحدة للموبايل */
+  }
+  .title {
+    font-size: 36px;
+  }
+  .main-img {
+    width: 200px;
+  }
+  .gimg {
+    height: 240px;
+  }
+
+  /* تصغير الخط للنص السفلي كله */
+  .bottom-text {
+    font-size: 12px; /* نص أصغر للموبايل */
+  }
+
+  /* البريد الإلكتروني يبقى يكسر النص الطويل */
+  .email {
+    font-size: 12px;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+}
