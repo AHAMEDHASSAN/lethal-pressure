@@ -20,6 +20,23 @@ body {
   padding-top: 20px;
 }
 
+.top-section h2 {
+  margin: 10px 20px  ;
+  font-size: 30px;
+}
+
+.top-section p {
+  font-size: 18px;
+    margin: 10px 20px  ;
+
+}
+
+.top-section small {
+  font-size: 14px;
+      margin: 10px 20px  ;
+
+}
+
 .main-img {
   width: 260px;
   animation: fadeIn 1.2s ease-in-out forwards;
@@ -59,7 +76,10 @@ body {
   animation: fadeSlide 0.8s ease forwards;
 
   /* تأثير الفلاش */
-  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.25s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    filter 0.25s ease;
 }
 
 .gimg:hover {
